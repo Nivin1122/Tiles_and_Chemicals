@@ -9,7 +9,7 @@ class UserProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->get();
+        $products = Product::with('category')->paginate(6);
         return view('userside.pages.list_products', compact('products'));
     }
 
