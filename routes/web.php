@@ -4,7 +4,10 @@ use App\Http\Controllers\Admin\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\UserProductController;
 
+
+Route::get('/', [UserProductController::class, 'index'])->name('userside.pages.list_products');
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('admin.auth.login');
@@ -13,6 +16,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
     
+    // Route::get('/products/{product}', [UserProductController::class, 'show'])->name('products.show');
 
     Route::middleware('auth:admin')->group(function () {
         Route::get('/dashboard', function () {
