@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.

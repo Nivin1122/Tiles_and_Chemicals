@@ -30,7 +30,8 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware('auth:admin')->group(function () {
         Route::get('/dashboard', function () {
-            return view('admin.pages.dashboard');
+            $products = \App\Models\Product::with('category')->get();
+            return view('admin.pages.dashboard', compact('products'));
         })->name('admin.pages.dashboard');
 
         Route::resource('categories', CategoryController::class)->names('admin.categories');
