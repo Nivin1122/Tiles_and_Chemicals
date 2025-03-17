@@ -8,17 +8,23 @@
 <h1>Products</h1>
     <a href="{{ route('admin.products.create') }}">Add Product</a>
     <table>
-        <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Actions</th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Area of Use</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Actions</th>
+    </tr>
         @foreach ($products as $product)
             <tr>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->category->name }}</td>
+                <td>{{ $product->size }}</td>
+                <td>{{ $product->color }}</td>
+                <td>{{ $product->area_of_use }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->stock }}</td>
                 <td>
