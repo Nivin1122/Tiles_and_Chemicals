@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\UserProductController;
 use App\Http\Controllers\Admin\AdminCustomerController;
+use App\Http\Controllers\CustomerController;
+
 
 
 Route::get('/', [UserProductController::class, 'index'])->name('userside.pages.list_products');
